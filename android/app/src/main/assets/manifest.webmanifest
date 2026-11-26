@@ -1,0 +1,23 @@
+{
+  "name": "Форма — дневник тренировок",
+  "short_name": "Форма",
+  "description": "Тренировки и восстановление. Работает без сети.",
+  "lang": "ru",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0C0F12",
+  "theme_color": "#0E1114",
+  "categories": ["health", "fitness", "lifestyle"],
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Новая тренировка", "url": "./index.html#/workout" },
+    { "name": "Отметить восстановление", "url": "./index.html#/recovery" }
+  ]
+}

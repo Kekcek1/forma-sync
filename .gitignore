@@ -1,0 +1,14 @@
+venv/
+__pycache__/
+*.pyc
+server/data/
+desktop/build/
+desktop/dist/
+desktop/web/
+android/.gradle/
+android/build/
+android/app/build/
+*.apk
+*.exe
+.DS_Store
+Thumbs.db
