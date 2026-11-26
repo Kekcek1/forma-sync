@@ -6,10 +6,11 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 public class MainActivity extends Activity {
 
+    static final String HOST = "appassets.local";
+    private static final String BASE = "https://" + HOST + "/";
     private WebView web;
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -21,11 +22,13 @@ public class MainActivity extends Activity {
         s.setJavaScriptEnabled(true);
         s.setDomStorageEnabled(true);
         s.setDatabaseEnabled(true);
-        s.setAllowFileAccess(true);
-        s.setAllowContentAccess(true);
+        s.setAllowFileAccess(false);
+        s.setAllowContentAccess(false);
         s.setMediaPlaybackRequiresUserGesture(false);
-        web.setWebViewClient(new WebViewClient());
-        web.loadUrl("file:///android_asset/index.html");
+        s.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        s.setCacheMode(WebSettings.LOAD_DEFAULT);
+        web.setWebViewClient(new AssetClient(this));
+        web.loadUrl(BASE + "index.html");
         setContentView(web);
     }
 
